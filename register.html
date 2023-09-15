@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row  justify-content-center ">
+            <div class="col-md-6 ">
+                <div class="card">
+                    <div class="card-header bg-primary">Register</div>
+                    <div class="card-body bg-info">
+                        <form onsubmit=" return false">
+                             <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" onblur="validation('name-field')">
+                                <small class="text-danger" id="name_valid"></small>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"  onblur="validation('email-field')">
+                                <small class="text-danger" id="email_valid"></small>
+
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"   onblur="validation('password-field')">
+                                <small class="text-danger" id="password_valid"></small>
+
+                            </div>
+                            
+                            <div class="form-group mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone " pattern="[0-9]*"   onblur="validation('phone-field')">
+                                <small class="text-danger" id="phone_valid"></small>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="dropdown" class="form-label">Gender</label>
+
+                                <input class="form-control" list="datalistOptions" id="dropdown" placeholder="Select gender"   onblur="validation('gender-field')">
+                                <datalist id="datalistOptions">
+                                  <option value="male">
+                                  <option value="female">
+                                </datalist>
+                                <small class="text-danger" id="gender_valid"></small>
+
+                            </div>
+                            <div> 
+                            <button type="submit" class="btn btn-primary">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        var x=document.getElementById("name")
+        console.log(x)
+        var y=document.getElementById("email") 
+        console.log(y)
+        var z=document.getElementById("password") 
+        console.log(z)
+        var a=document.getElementById("phone") 
+        console.log(a)
+        var b=document.getElementById("dropdown") 
+        console.log(b)
+
+        function validation(field){
+            if(field==='name-field'){
+          if(x.value){
+            x.classList.remove("is-invalid") 
+              x.classList.add("is-valid") 
+              document.getElementById("name_valid").innerHTML="";
+            }
+            else{
+                x.classList.remove("is-valid") 
+              x.classList.add("is-invalid") 
+              document.getElementById("name_valid").innerHTML="name feild is required";
+            } 
+        }
+
+          else if(field==='email-field'){
+            if(y.value){
+              y.classList.remove("is-invalid") 
+              y.classList.add("is-valid") 
+              document.getElementById("email_valid").innerHTML="";
+            }
+            else{
+              y.classList.remove("is-valid") 
+              y.classList.add("is-invalid") 
+              document.getElementById("email_valid").innerHTML="email feild is required";
+            } 
+        }
+         else if(field==='password-field'){
+            if(z.value){
+              z.classList.remove("is-invalid") 
+              z.classList.add("is-valid") 
+              document.getElementById("password_valid").innerHTML="";
+            }
+            else{
+              z.classList.remove("is-valid") 
+              z.classList.add("is-invalid") 
+              document.getElementById("password_valid").innerHTML="password feild is required";
+            } 
+         }else if(field==='phone-field'){
+            if(a.value){
+              a.classList.remove("is-invalid") 
+              a.classList.add("is-valid") 
+              document.getElementById("phone_valid").innerHTML="";
+            }
+            else{
+              a.classList.remove("is-valid") 
+              a.classList.add("is-invalid") 
+              document.getElementById("phone_valid").innerHTML="phone feild is required";
+            } 
+         }else if(field==='gender-field'){
+            if(b.value){
+              b.classList.remove("is-invalid") 
+              b.classList.add("is-valid") 
+              document.getElementById("gender_valid").innerHTML="";
+            }
+            else{
+              b.classList.remove("is-valid") 
+              b.classList.add("is-invalid") 
+              document.getElementById("gender_valid").innerHTML="gender feild is required";
+            } 
+         }
+        }
+   </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.6/dist/umd/popper.min.js"></script>
+</body>
+</html>
